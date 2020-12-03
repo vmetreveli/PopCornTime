@@ -1,0 +1,56 @@
+/* 
+  Localizable.strings
+  PopCornTime
+
+  Created by vakhushti metreveli on 02.12.20.
+  
+*/
+
+
+
+"app_name" = "PopCornTime";
+
+/* Buttons */
+"ok" = "Ok";
+"cancel" = "Cancel";
+"yes" = "Yes";
+"no" = "No";
+
+/* StatusMessage */
+"incorrect_email" = "Wrong email format";
+"incorrect_password" = "The password must contain at least 8 characters, including a capital letter and a number!";
+"incorrect_username" = "Wrong name";
+"field_cant_be_empty" = "Field can't be empty";
+"password_doesnt_match" = "";
+"server_error" = "Opps! Something went wrong, try again";
+"network_error" = "There were problems with internet connection, try again";
+"location_error" = "Problems with check your location";
+"somthing_was_wrong" = "Opps! Something went wrong, try again.";
+"incorrect_server_response" = "Something went wrong, try again";
+"purchase_status_title" = "Purchase status";
+
+
+"days_left" = "დარჩა %d დღე";
+"refresh" = "განახლება";
+"price_lari" ="%.02f ₾";
+"electronic_card" ="ელექტრონული ბარათი";
+"start_saving" ="დაიწყე დაგროვება";
+
+
+"direction" ="მიმართულება";
+"choose_store" ="აირჩიეთ მაღაზია";
+"all_cities" = "ყველა ქალაქი";
+"find_address" = "მოძებნე მაღაზია";
+
+
+"transactions_history" = "ტრანზაქციების ისტორია";
+"change_languge" = "ენის შეცვლა";
+"manage_notifications" = "შეტყობინებების მართვა";
+
+"error-occured" = "დაფიქსირდა შეცდომა";
+"wrong-user-name" = "მითითებული ელ-ფოსტა ან პაროლი არასწორია";
+"phone-or-email" = "ტელეფონის ნომერი ან ელ. ფოსტა";
+"field-mandatory" = "ველი სავალდებულოა";
+"password" = "პაროლი";
+"forgot-password" = "დაგავიწყდა პაროლი?";
+"authorisation" = "ავტორიზაცია";

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C4EF2DF0-0E92-4066-ADDD-A28497F167A6"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "69D50CA3-9CCD-43A4-9247-016C43BA39C0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Scenes/Home/HomeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC49495D-D01E-4588-991F-D99BD4BE3BC0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Coordinators/AppCooordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "prepareTransition(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BF4E0AEB-91CC-4B5A-B14C-7314861B661C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Coordinators/AppCooordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "prepareTransition(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BF4E0AEB-91CC-4B5A-B14C-7314861B661C - 194e94ce749d4b7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PopCornTime.AppCoordinator.prepareTransition(for: PopCornTime.AppRoute) -&gt; XCoordinator.Transition&lt;__C.UINavigationController&gt;"
+                  moduleName = "PopCornTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Coordinators/AppCooordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "654">
+               </Location>
+               <Location
+                  uuid = "BF4E0AEB-91CC-4B5A-B14C-7314861B661C - 194e94ce749d4b7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PopCornTime.AppCoordinator.prepareTransition(for: PopCornTime.AppRoute) -&gt; XCoordinator.Transition&lt;__C.UINavigationController&gt;"
+                  moduleName = "PopCornTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Coordinators/AppCooordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "875">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
