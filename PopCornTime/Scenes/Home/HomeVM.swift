@@ -12,12 +12,12 @@ import XCoordinator
 import Action
 
 class HomeVM {
-
-// MARK: Stored properties
-
-private let router: UnownedRouter<AppRoute>
-private let dependencies: AppRequestBMProtocol
-   
+    
+    // MARK: Stored properties
+    
+    private let router: UnownedRouter<AppRoute>
+    private let dependencies: AppRequestBMProtocol
+    
     init(router: UnownedRouter<AppRoute>, dependencies: AppRequestBMProtocol) {
         self.router = router
         self.dependencies = dependencies
@@ -25,27 +25,37 @@ private let dependencies: AppRequestBMProtocol
     
     
     func loadPopularMovies() -> Observable<[PopularMovieModel]> {
-        
         return Observable.create { observer -> Disposable in
-
-            self.dependencies.getPopularMovie() { [weak self] (responce) in
-            guard let self = self else { return }
-            switch responce {
-            case .success(let popularMovieWholeDataModel):
-                observer.onNext(popularMovieWholeDataModel)
-            case .failure(let error):
-                observer.onError(error)
-                print(error)
-               // comlpetion(false)
+            
+            self.dependencies.getPopularMovie() { (responce) in
+                //  guard let self = self else { return }
+                switch responce {
+                    case .success(let popularMovieWholeDataModel):
+                        observer.onNext(popularMovieWholeDataModel)
+                    case .failure(let error):
+                        observer.onError(error)
+                }
             }
-          
-        }
-            //
-           // let arr = self.dataManager.getBranches()
-           // self.branchesList = arr
-         //   comlpetion(arr)
             return Disposables.create()
         }
     }
+    
+//    func loadPopularMovies(comlpetion: @escaping (([PopularMovieModel]) -> ())) {
+//        dependencies.getPopularMovie() { [weak self] (responce) in
+//            guard let self = self else { return }
+//
+//            //  print(responce)
+//            switch responce {
+//                case .success(let transaction):
+//                    comlpetion(transaction)
+//                case .failure(let error):
+//                    print(error)
+//            }
+//            // var transactionHistory: TransactionHistoryModel = TransactionHistoryModel()
+//
+//            //  comlpetion(responce)
+//        }
+//    }
+
 }
 

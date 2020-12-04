@@ -35,7 +35,7 @@ enum AppRequestRouter: RequestRouter {
     
     var parameters: Parameters? {
         var params: [String:Any] = [:]
-        params = ["api_key": "16469fcd24a79b005d4886e4e3c56ede"]
+        params = ["api_key": Constant.UserDefaultKeys.ID_TOKEN]
         
         //        switch self {
         //            case .getBranches:

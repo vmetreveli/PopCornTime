@@ -8,7 +8,7 @@ target 'PopCornTime' do
   # Pods for PopCornTime
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'RxDataSources'∫
+  pod 'RxDataSources'
   
   pod 'ObjectMapper'
   pod 'Alamofire'
@@ -18,6 +18,8 @@ target 'PopCornTime' do
   pod 'Action'
   
   pod 'ReachabilitySwift'
+    
+  pod 'SDWebImage'
 
 
 end

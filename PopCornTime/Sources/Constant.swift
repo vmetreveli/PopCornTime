@@ -74,10 +74,8 @@ typealias PopularMovieDataCompletionHandler = (Result<[PopularMovieModel], Statu
 //==============================================================
 
 struct Constant {
-    static let baseURL = "https://api.themoviedb.org/3/movie/"
-    // static let filesPrefixURL = "https://file-api.staging.orinabiji.ge/api/files/download/"
-
-  
+    static let baseURL = "https://api.themoviedb.org/3/movie"
+    static let imagebaseURL = "https://image.tmdb.org/t/p/w440_and_h660_face"
     
     struct NotificationCenterKey {
         static let userDidLogout = "NotificationCenterKey_UserDidLogout"

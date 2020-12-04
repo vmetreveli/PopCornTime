@@ -34,7 +34,6 @@ extension BackendManager: AppRequestBMProtocol{
             guard let data = movieData.results else {return}
             completionHandler(.success(data))
         } catch {
-            print(error.localizedDescription)
             completionHandler(.failure(StatusMessage.parsError))
         }
     }
