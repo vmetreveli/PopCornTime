@@ -35,6 +35,12 @@ class HomeVC: UIViewController, BindableType {
             }
             .disposed(by: disposeBag)
         
+        tableView.rx.modelSelected(PopularMovieModel.self)
+               .subscribe(onNext: { [weak self] item in
+                   // other actions with Item object
+                self?.viewModel.detailAction.execute()
+               }).addDisposableTo(disposeBag)
+        
         
     }
     

@@ -10,6 +10,7 @@ import XCoordinator
 
 enum AppRoute: Route {
     case home(AppDependencies)
+    case detail
 }
 
 class AppCoordinator: NavigationCoordinator<AppRoute>{
@@ -34,6 +35,12 @@ class AppCoordinator: NavigationCoordinator<AppRoute>{
             let viewModel = HomeVM(router: unownedRouter, dependencies: dependencies.backendManager)
             viewController.bind(to: viewModel)
             return .push(viewController)
+        case .detail://(let movie):
+            let viewController = DetailVC.instantiateFromStoryboard(storyboardName: "DetailView", storyboardId: "DetailView")
+            let movie : PopularMovieModel
+            let viewModel = DetailVM(router: unownedRouter)//, movie: movie)
+            viewController.bind(to: viewModel)
+            return .showDetail(viewController)
         }
         
     }

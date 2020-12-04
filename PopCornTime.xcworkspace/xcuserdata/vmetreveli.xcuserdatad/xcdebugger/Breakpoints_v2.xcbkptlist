@@ -23,70 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DC49495D-D01E-4588-991F-D99BD4BE3BC0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PopCornTime/Coordinators/AppCooordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "prepareTransition(for:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BF4E0AEB-91CC-4B5A-B14C-7314861B661C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PopCornTime/Coordinators/AppCooordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "prepareTransition(for:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BF4E0AEB-91CC-4B5A-B14C-7314861B661C - 194e94ce749d4b7d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PopCornTime.AppCoordinator.prepareTransition(for: PopCornTime.AppRoute) -&gt; XCoordinator.Transition&lt;__C.UINavigationController&gt;"
-                  moduleName = "PopCornTime"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Coordinators/AppCooordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "654">
-               </Location>
-               <Location
-                  uuid = "BF4E0AEB-91CC-4B5A-B14C-7314861B661C - 194e94ce749d4b7d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PopCornTime.AppCoordinator.prepareTransition(for: PopCornTime.AppRoute) -&gt; XCoordinator.Transition&lt;__C.UINavigationController&gt;"
-                  moduleName = "PopCornTime"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Coordinators/AppCooordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "875">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DA9120A8-081F-4534-BFDB-4BD64F615968"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -97,6 +33,22 @@
             startingLineNumber = "83"
             endingLineNumber = "83"
             landmarkName = "configCell(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2FB2F4C8-DCBD-4D8D-8871-9C36036955D6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Scenes/Home/HomeCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "prepareTransition(for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

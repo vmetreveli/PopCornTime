@@ -40,6 +40,9 @@ class HomeVM {
         }
     }
     
+     lazy var detailAction = CocoaAction { [unowned self] in
+        self.router.rx.trigger(.detail)
+    }
 //    func loadPopularMovies(comlpetion: @escaping (([PopularMovieModel]) -> ())) {
 //        dependencies.getPopularMovie() { [weak self] (responce) in
 //            guard let self = self else { return }
