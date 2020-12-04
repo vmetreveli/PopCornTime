@@ -83,11 +83,8 @@ final class MovieCell: UITableViewCell{
         
         movieNameLabel!.text = viewModel.originalTitle
     
-        poster.sd_setImage(with: URL(string: ("\(Constant.imagebaseURL)\(viewModel.posterPath!)" ?? "")), placeholderImage: UIImage(named: "offer_placeholder"), options: .retryFailed, completed: nil)
-        //viewModel.loadImage { image in
-        //self.backgroundImageView.image = viewModel.posterPath
-        // }
-        
+        poster.sd_setImage(with: URL(string: ("\(Constant.imagebaseURL)\(viewModel.posterPath!)")), placeholderImage: UIImage(named: "offer_placeholder"), options: .retryFailed, completed: nil)
+  
     }
 }
 
