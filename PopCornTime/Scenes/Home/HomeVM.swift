@@ -48,7 +48,9 @@ class HomeVM {
     }
     
      lazy var detailAction = Action<PopularMovieModel, Void> { [unowned self] model in
-        self.router.rx.trigger(.detail(model))
+        
+        model.posterPath = "\(Constant.imagebaseURL)\(model.posterPath!)"
+      return   self.router.rx.trigger(.detail(model))
     }
 
 

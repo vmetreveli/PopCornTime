@@ -13,19 +13,21 @@ public class ResponsePopularMovieModel: BaseResponse<[PopularMovieModel]> {
 }
 
 
-public struct PopularMovieModel: Codable {
-    let adult: Bool?
-    let backdropPath: String?
-    let genreIDS: [Int]?
-    let id: Int?
-    let originalLanguage, originalTitle, overview: String?
-    let popularity: Double?
-    let posterPath : String?
-    let releaseDate: String?
-    let title: String?
-    let video: Bool?
-    let voteAverage: Double?
-    let voteCount: Int?
+public class PopularMovieModel: Codable {
+    var adult: Bool? = nil
+    var backdropPath: String? = ""
+    var genreIDS: [Int]? = []
+    var id: Int? = nil
+    var originalLanguage:String? = ""
+    var originalTitle: String? = ""
+    var overview: String? = ""
+    var popularity: Double? = nil
+    var posterPath : String? = ""
+    var releaseDate: String? = ""
+    var title: String? = ""
+    var video: Bool? = nil
+    var voteAverage: Double? = nil
+    var voteCount: Int? = nil
     
     enum CodingKeys: String, CodingKey {
         case adult
@@ -42,4 +44,5 @@ public struct PopularMovieModel: Codable {
         case voteCount = "vote_count"
     }
 }
+
 

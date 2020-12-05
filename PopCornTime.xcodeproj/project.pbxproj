@@ -48,13 +48,14 @@
 		7BBBC39F257B87C70019FD25 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBC39E257B87C70019FD25 /* CircularProgressBar.swift */; };
 		7BBBC3C2257B98800019FD25 /* FavoritesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBC3C1257B98800019FD25 /* FavoritesVM.swift */; };
 		7BBBC3C5257B988F0019FD25 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBC3C4257B988F0019FD25 /* FavoritesVC.swift */; };
-		7BBBC3C8257B989D0019FD25 /* FavoritesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BBBC3C7257B989D0019FD25 /* FavoritesView.storyboard */; };
 		7BBBC3CE257BA9D50019FD25 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBC3CD257BA9D50019FD25 /* FavoritesCoordinator.swift */; };
 		7BBBC3DE257BAB820019FD25 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBC3DD257BAB820019FD25 /* HomeCoordinator.swift */; };
 		7BCFE893257BD092006C7497 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BCFE891257BD092006C7497 /* Model.xcdatamodeld */; };
 		7BCFE896257BD1CD006C7497 /* Favorites+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCFE895257BD1CD006C7497 /* Favorites+Ex.swift */; };
 		7BCFE899257BD3D3006C7497 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCFE898257BD3D3006C7497 /* DataManager.swift */; };
 		7BCFE89D257BD665006C7497 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCFE89C257BD665006C7497 /* Date+Ex.swift */; };
+		7BCFE8BD257C0A08006C7497 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCFE8BC257C0A08006C7497 /* FavoriteCell.swift */; };
+		7BCFE8C0257C0AA6006C7497 /* FavoritesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BCFE8BF257C0AA6006C7497 /* FavoritesView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,13 +103,14 @@
 		7BBBC39E257B87C70019FD25 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		7BBBC3C1257B98800019FD25 /* FavoritesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVM.swift; sourceTree = "<group>"; };
 		7BBBC3C4257B988F0019FD25 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
-		7BBBC3C7257B989D0019FD25 /* FavoritesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritesView.storyboard; sourceTree = "<group>"; };
 		7BBBC3CD257BA9D50019FD25 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
 		7BBBC3DD257BAB820019FD25 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		7BCFE892257BD092006C7497 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7BCFE895257BD1CD006C7497 /* Favorites+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorites+Ex.swift"; sourceTree = "<group>"; };
 		7BCFE898257BD3D3006C7497 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		7BCFE89C257BD665006C7497 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
+		7BCFE8BC257C0A08006C7497 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		7BCFE8BF257C0AA6006C7497 /* FavoritesView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FavoritesView.storyboard; sourceTree = "<group>"; };
 		C1B549016A10EC1E23766DA8 /* Pods-PopCornTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornTime.debug.xcconfig"; path = "Target Support Files/Pods-PopCornTime/Pods-PopCornTime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -317,12 +319,21 @@
 		7BBBC3C0257B98500019FD25 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				7BCFE8BB257C09CF006C7497 /* Cell */,
 				7BBBC3C1257B98800019FD25 /* FavoritesVM.swift */,
 				7BBBC3C4257B988F0019FD25 /* FavoritesVC.swift */,
-				7BBBC3C7257B989D0019FD25 /* FavoritesView.storyboard */,
+				7BCFE8BF257C0AA6006C7497 /* FavoritesView.storyboard */,
 				7BBBC3CD257BA9D50019FD25 /* FavoritesCoordinator.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		7BCFE8BB257C09CF006C7497 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7BCFE8BC257C0A08006C7497 /* FavoriteCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		AF34D18F05F6976F50BA4F71 /* Pods */ = {
@@ -394,7 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BBBC37C257B6F770019FD25 /* DetailView.storyboard in Resources */,
-				7BBBC3C8257B989D0019FD25 /* FavoritesView.storyboard in Resources */,
+				7BCFE8C0257C0AA6006C7497 /* FavoritesView.storyboard in Resources */,
 				7B1C6D3A25781099004A4B14 /* Localizable.strings in Resources */,
 				7B1C6CEB25780ADA004A4B14 /* LaunchScreen.storyboard in Resources */,
 				7B1C6D812578148E004A4B14 /* HomeView.storyboard in Resources */,
@@ -460,6 +471,7 @@
 				7BBBC39C257B85040019FD25 /* CustomTextView.swift in Sources */,
 				7B1C6D0E25780E68004A4B14 /* HomeVM.swift in Sources */,
 				7B1C6D572578121E004A4B14 /* TransitionAnimation+Defaults.swift in Sources */,
+				7BCFE8BD257C0A08006C7497 /* FavoriteCell.swift in Sources */,
 				7B1C6D6D25781379004A4B14 /* AppRequestBM.swift in Sources */,
 				7BCFE896257BD1CD006C7497 /* Favorites+Ex.swift in Sources */,
 				7B1C6D51257811DC004A4B14 /* Animation+Scale.swift in Sources */,

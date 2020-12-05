@@ -9,15 +9,15 @@ import CoreData
 
 protocol DataManagerProtocol {
     func deleteAllFavorites()
+    func deleteFavorite(by id: Int32)
     func saveFavorites(with models: [PopularMovieModel])
-    func getOffersFetchController() -> NSFetchedResultsController<NSFetchRequestResult>
+    func getFavoritesFetchController() -> [Favorites]
     func getFavorites(by id: Int32) -> Favorites?
-  
+    
 }
 
 
 class DataManager: DataManagerProtocol {
-
     
     let persistentContainer: NSPersistentContainer
     
@@ -45,38 +45,43 @@ class DataManager: DataManagerProtocol {
             }
         }
     }
-   
+    
+    
     func deleteAllFavorites() {
         deleteAllNonBulkEntities(entityName: FAVORITE_ENTITY_NAME)
+    }
+    
+    func deleteFavorite(by id: Int32){
+        deletebyId(id: id, entityName: FAVORITE_ENTITY_NAME)
     }
     
     func saveFavorites(with models: [PopularMovieModel]) {
         let context = persistentContainer.viewContext
         
         for model in models {
-                let favoriteModel = NSEntityDescription.insertNewObject(forEntityName: FAVORITE_ENTITY_NAME, into: context) as! Favorites
+            let favoriteModel = NSEntityDescription.insertNewObject(forEntityName: FAVORITE_ENTITY_NAME, into: context) as! Favorites
             favoriteModel.config(with: model)
         }
         context.saveContext()
     }
     
-    func getOffersFetchController() -> NSFetchedResultsController<NSFetchRequestResult> {
+    func getFavoritesFetchController() -> [Favorites] {
         let context = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: FAVORITE_ENTITY_NAME)
-        let endDateDescriptor = NSSortDescriptor(key: "id", ascending: false)
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: FAVORITE_ENTITY_NAME)
+       // let sortOrderDescriptor = NSSortDescriptor(key: "sortOrderId", ascending: true)
         
-        fetchRequest.sortDescriptors = [endDateDescriptor]
-               
-        let dateFromPredicate = NSPredicate(format: "endDate >= %@", Date().toBeginningOfDate() as NSDate)
-        
-        fetchRequest.predicate = dateFromPredicate
-        let fetchController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        return fetchController
+       // fetch.sortDescriptors = [sortOrderDescriptor]
+        do {
+            let movies = try context.fetch(fetch) as! [Favorites]
+            
+            return movies
+        } catch {
+            return []
+        }
     }
     
     func getFavorites(by id: Int32) -> Favorites? {
-     
+        
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: FAVORITE_ENTITY_NAME)
         fetch.returnsObjectsAsFaults = false
         let predicate = NSPredicate(format: "id == %ld",id)
@@ -91,9 +96,11 @@ class DataManager: DataManagerProtocol {
     }
     
     
+    
 }
 
-extension DataManager{
+
+extension DataManager {
     private func deleteAllNonBulkEntities(entityName: String){
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
@@ -104,6 +111,24 @@ extension DataManager{
             }
         } catch { print(error) }
     }
+    
+    private func deletebyId(id: Int32, entityName: String){
+        let context = persistentContainer.viewContext
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: FAVORITE_ENTITY_NAME)
+        fetch.returnsObjectsAsFaults = false
+        let predicate = NSPredicate(format: "id == %ld",id)
+        fetch.fetchLimit = 1
+        fetch.predicate = predicate
+        do {
+            guard var model = try persistentContainer.viewContext.fetch(fetch) as? [Favorites] else { return }
+            context.delete(model.first!)
+        } catch {
+            print(error)
+        }
+    }
+    
+    
+    
 }
 
 extension NSManagedObjectContext {

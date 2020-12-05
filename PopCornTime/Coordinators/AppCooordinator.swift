@@ -21,13 +21,7 @@ class AppCoordinator: TabBarCoordinator<AppRoute>{
     var dependencies: AppDependencies!
     var backendManager = BackendManager()
     
-    
-    //    // MARK: Initialization
-    //
-    //    init() {
-    //        dependencies = AppDependencies(backendManager: backendManager)
-    //        super.init(initialRoute: .home(dependencies))
-    //    }
+
     // MARK: Stored properties
     
     private let favoritesRouter: StrongRouter<FavoritesRoute>
@@ -40,10 +34,12 @@ class AppCoordinator: TabBarCoordinator<AppRoute>{
     convenience init() {
         
         let homeCoordinator = HomeCoordinator()
-        homeCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        homeCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "icons8-fire"), tag: 0)
+        
+       // (tab: 1, image: UIImage(named: "selected-image"))
         
         let favoritesCoordinator = FavoritesCoordinator()
-        favoritesCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        favoritesCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "icons8-star"), tag: 1)
          
         self.init(favoritesRouter: favoritesCoordinator.strongRouter, homeRouter: homeCoordinator.strongRouter)
     }

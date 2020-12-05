@@ -8,16 +8,236 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3C4D7F88-CA42-430E-A4C2-BB516D52BFEC"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PopCornTime/Coordinators/AppCooordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "prepareTransition(for:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A26C20C7-1402-4701-8CB5-7DB3162003EF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Scenes/Favorites/FavoritesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "bindViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B35FBD06-3620-4139-822E-08BA1E176321"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Scenes/Favorites/FavoritesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "bindViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AD23213-5E9F-453C-A850-C5047D37DB80"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Scenes/Favorites/FavoritesVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "FavoritesVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "5AD23213-5E9F-453C-A850-C5047D37DB80 - f1fb603f39a8f1ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PopCornTime.FavoritesVC.viewModel.getter : Swift.Optional&lt;PopCornTime.FavoritesVM&gt;"
+                  moduleName = "PopCornTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Scenes/Favorites/FavoritesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "5AD23213-5E9F-453C-A850-C5047D37DB80 - 513066c000960411"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PopCornTime.FavoritesVC.viewModel.setter : Swift.Optional&lt;PopCornTime.FavoritesVM&gt;"
+                  moduleName = "PopCornTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Scenes/Favorites/FavoritesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "5AD23213-5E9F-453C-A850-C5047D37DB80 - 89843bd56aed4c0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PopCornTime.FavoritesVC.viewModel.modify : Swift.Optional&lt;PopCornTime.FavoritesVM&gt;"
+                  moduleName = "PopCornTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Scenes/Favorites/FavoritesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "5AD23213-5E9F-453C-A850-C5047D37DB80 - ddf8a2f4f8bb04fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PopCornTime.FavoritesVC.viewModel.modify : Swift.Optional&lt;PopCornTime.FavoritesVM&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "PopCornTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Scenes/Favorites/FavoritesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "5AD23213-5E9F-453C-A850-C5047D37DB80 - 4f018614730d0343"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PopCornTime.FavoritesVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; PopCornTime.FavoritesVC"
+                  moduleName = "PopCornTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Scenes/Favorites/FavoritesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "218">
+               </Location>
+               <Location
+                  uuid = "5AD23213-5E9F-453C-A850-C5047D37DB80 - a305e6289d24c9f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PopCornTime.FavoritesVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PopCornTime.FavoritesVC&gt;"
+                  moduleName = "PopCornTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Scenes/Favorites/FavoritesVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "141">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49271A4A-06B4-4A6A-B477-E20DE5ABC71A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Scenes/Favorites/FavoritesVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "init(router:dataManager:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF91DE5C-CA93-4383-B604-F52B8AA49018"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Scenes/Favorites/FavoritesVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "detailAction"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7A1897E-F730-480A-9BBB-8BB5646187FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Scenes/Detail/DetailVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "save()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D57D3215-6759-48C1-80FD-9719EC328AAA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Dependencies/DataManager/Favorites+Ex.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "config(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AC313603-A3DD-4121-81D4-DC8B425ECBC9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Scenes/Home/HomeVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "detailAction"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

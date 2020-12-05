@@ -26,23 +26,29 @@ class DetailVC: UIViewController, BindableType {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     
-  //  @IBOutlet weak var newPriceLabel: CustomLabel!
+    //  @IBOutlet weak var newPriceLabel: CustomLabel!
     
     func bindViewModel() {
         btnBack.rx.tap
-                .bind {
-                    self.viewModel.closeAction.execute()
-                }
-                .disposed(by: disposeBag)
+            .bind {
+                self.viewModel.closeAction.execute()
+            }
+            .disposed(by: disposeBag)
+        
         saveButton.rx.tap
-                .bind {
-                    self.viewModel.save().asObservable().subscribe(onNext:{ [weak self] item in
-                        // other actions with Item object
-                     print(item)
-                    })//.disposed(by: disposeBag)
+            .bind {
+                self.viewModel.save().asObservable().subscribe(onNext:{ [weak self] status in
                     
-                }.disposed(by: disposeBag)
-             
+                    switch status{
+                        case .save:
+                            self?.saveButton.setImage(UIImage(named: "icons8-heart_outline"), for: .normal)
+                        case .remove:
+                            self?.saveButton.setImage(UIImage(named: "icons8-heart"), for: .normal)
+                    }
+                }).disposed(by: self.disposeBag)
+                
+            }.disposed(by: disposeBag)
+        
     }
     //==============================================================
     //    MARK: - LiveCycle
@@ -50,17 +56,26 @@ class DetailVC: UIViewController, BindableType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        imoviePoster.sd_setImage(with: URL(string: ("\(Constant.imagebaseURL)\(viewModel.movie.posterPath!)")), placeholderImage: UIImage(named: "offer_placeholder"), options: .retryFailed, completed: nil)
+        
+        imoviePoster.sd_setImage(with: URL(string: viewModel.movie.posterPath!), placeholderImage: UIImage(named: "offer_placeholder"), options: .retryFailed, completed: nil)
         descriptionLabel.text = viewModel.movie.overview
         titleLabel.text = viewModel.movie.title
         progressBar.labelSize = 15
-    
+        
         self.progressBar.setProgress(to:  viewModel.movie.voteAverage! / 10, withAnimation: true)
-       
+        
+        viewModel.loadFavorites().asObservable().subscribe(onNext:{ [weak self] status in
+            switch status{
+                case .save:
+                    self?.saveButton.setImage(UIImage(named: "icons8-heart_outline"), for: .normal)
+                case .remove:
+                    self?.saveButton.setImage(UIImage(named: "icons8-heart"), for: .normal)
+            }
+        }).disposed(by: self.disposeBag)
+        
         panModalSetNeedsLayoutUpdate()
     }
-  
+    
 }
 
 //==============================================================
@@ -68,15 +83,15 @@ class DetailVC: UIViewController, BindableType {
 //==============================================================
 
 extension DetailVC: PanModalPresentable {
-
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
     var panScrollable: UIScrollView? {
         return self.scrollView
     }
-
+    
     var longFormHeight: PanModalHeight {
         scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -110,4 +125,4 @@ extension DetailVC: PanModalPresentable {
     //     var showDragIndicator: Bool {
     //         return true
     //     }
-    }
+}

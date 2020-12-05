@@ -13,6 +13,8 @@ extension Favorites {
         id = Int64(model.id!)
         movieTitle = model.title
         moviePoster = model.posterPath
+        voteAverage = model.voteAverage ?? 0
+        movieDescription = model.overview
         // endDate = offerModel.endDate.toDate(format: "yyyy-MM-dd")
     }
 }
