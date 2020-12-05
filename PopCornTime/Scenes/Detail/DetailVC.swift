@@ -23,6 +23,7 @@ class DetailVC: UIViewController, BindableType {
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var descriptionLabel: CustomTextView!
     @IBOutlet weak var progressBar: CircularProgressBar!
+    @IBOutlet weak var titleLabel: UILabel!
     
   //  @IBOutlet weak var newPriceLabel: CustomLabel!
     
@@ -43,11 +44,9 @@ class DetailVC: UIViewController, BindableType {
        
         imoviePoster.sd_setImage(with: URL(string: ("\(Constant.imagebaseURL)\(viewModel.movie.posterPath!)")), placeholderImage: UIImage(named: "offer_placeholder"), options: .retryFailed, completed: nil)
         descriptionLabel.text = viewModel.movie.overview
-        
+        titleLabel.text = viewModel.movie.title
         progressBar.labelSize = 15
-      //  progressBar.safePercent = 100
-       
-        print(viewModel.movie)
+    
         self.progressBar.setProgress(to:  viewModel.movie.voteAverage! / 10, withAnimation: true)
        
         panModalSetNeedsLayoutUpdate()

@@ -41,7 +41,6 @@
 		7B4D2C16257AB31200A549A0 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4D2C15257AB31200A549A0 /* DetailVC.swift */; };
 		7B4D2C1A257AB31A00A549A0 /* DetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4D2C19257AB31A00A549A0 /* DetailVM.swift */; };
 		7B95D9B92578CDBC00C0DEDE /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95D9B82578CDBC00C0DEDE /* BaseResponse.swift */; };
-		7B95DA212578DFA700C0DEDE /* HomeVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95DA202578DFA700C0DEDE /* HomeVMProtocol.swift */; };
 		7B95DA2625791DF300C0DEDE /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95DA2525791DF300C0DEDE /* MovieCell.swift */; };
 		7B95DA2A25791F4600C0DEDE /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95DA2925791F4600C0DEDE /* UIView+Extensions.swift */; };
 		7BBBC37C257B6F770019FD25 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BBBC37B257B6F770019FD25 /* DetailView.storyboard */; };
@@ -92,7 +91,6 @@
 		7B4D2C15257AB31200A549A0 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		7B4D2C19257AB31A00A549A0 /* DetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVM.swift; sourceTree = "<group>"; };
 		7B95D9B82578CDBC00C0DEDE /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
-		7B95DA202578DFA700C0DEDE /* HomeVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVMProtocol.swift; sourceTree = "<group>"; };
 		7B95DA2525791DF300C0DEDE /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		7B95DA2925791F4600C0DEDE /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		7BBBC37B257B6F770019FD25 /* DetailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				7B1C6D0D25780E68004A4B14 /* HomeVM.swift */,
 				7B1C6D1025780E74004A4B14 /* HomeVC.swift */,
 				7B1C6D802578148E004A4B14 /* HomeView.storyboard */,
-				7B95DA202578DFA700C0DEDE /* HomeVMProtocol.swift */,
 				7BBBC3DD257BAB820019FD25 /* HomeCoordinator.swift */,
 			);
 			path = Home;
@@ -459,7 +456,6 @@
 				7B1C6D4725781198004A4B14 /* Animation+Fade.swift in Sources */,
 				7B4D2C16257AB31200A549A0 /* DetailVC.swift in Sources */,
 				7BBBC3CE257BA9D50019FD25 /* FavoritesCoordinator.swift in Sources */,
-				7B95DA212578DFA700C0DEDE /* HomeVMProtocol.swift in Sources */,
 				7B1C6D3125780FEF004A4B14 /* BindableType.swift in Sources */,
 				7B95DA2625791DF300C0DEDE /* MovieCell.swift in Sources */,
 				7B1C6D4B257811AE004A4B14 /* Animation+Modal.swift in Sources */,
