@@ -70,6 +70,11 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17y-sl-Cgb" customClass="CircularProgressBar" customModule="PopCornTime" customModuleProvider="target">
                                                 <rect key="frame" x="222" y="171" width="93" height="79"/>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oit-wG-evr">
+                                                <rect key="frame" x="8" y="220" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="icons8-heart"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -180,6 +185,7 @@
                         <outlet property="descriptionLabel" destination="LdF-Zj-qxo" id="I91-Io-R8C"/>
                         <outlet property="imoviePoster" destination="qLl-Ih-5w9" id="4v2-Uz-IKU"/>
                         <outlet property="progressBar" destination="17y-sl-Cgb" id="1cz-1E-o3a"/>
+                        <outlet property="saveButton" destination="Oit-wG-evr" id="T7O-A2-WDy"/>
                         <outlet property="scrollView" destination="dbv-ir-rEL" id="YFr-3t-O7S"/>
                         <outlet property="titleLabel" destination="exF-mi-Hmn" id="pe8-11-31T"/>
                     </connections>
@@ -191,6 +197,7 @@
     </scenes>
     <resources>
         <image name="arrowleft" width="12" height="10"/>
+        <image name="icons8-heart" width="24" height="24"/>
         <namedColor name="BlackTitle">
             <color red="0.090196078431372548" green="0.11372549019607843" blue="0.14509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -24,6 +24,7 @@ class DetailVC: UIViewController, BindableType {
     @IBOutlet weak var descriptionLabel: CustomTextView!
     @IBOutlet weak var progressBar: CircularProgressBar!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
     
   //  @IBOutlet weak var newPriceLabel: CustomLabel!
     
@@ -33,7 +34,15 @@ class DetailVC: UIViewController, BindableType {
                     self.viewModel.closeAction.execute()
                 }
                 .disposed(by: disposeBag)
-   
+        saveButton.rx.tap
+                .bind {
+                    self.viewModel.save().asObservable().subscribe(onNext:{ [weak self] item in
+                        // other actions with Item object
+                     print(item)
+                    })//.disposed(by: disposeBag)
+                    
+                }.disposed(by: disposeBag)
+             
     }
     //==============================================================
     //    MARK: - LiveCycle

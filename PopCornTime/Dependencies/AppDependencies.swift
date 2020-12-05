@@ -11,12 +11,12 @@ struct AppDependencies {
     //let profileManager: ProfileManagerProtocol
     let backendManager: BackendManager
   //  let appRequestManager: AppRequestManager
-  //  let dataManager: DataManagerProtocol
+    let dataManager: DataManagerProtocol
  
     init(backendManager: BackendManager){//}, profileManager: ProfileManager) {
         self.backendManager = backendManager
         //self.profileManager = profileManager
 //        self.appRequestManager = AppRequestManager(backendManager: backendManager)
-      //  self.dataManager = DataManager()
+        self.dataManager = DataManager()
     }
 }
