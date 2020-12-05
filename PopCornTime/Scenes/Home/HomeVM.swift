@@ -18,10 +18,17 @@ class HomeVM {
     private let router: UnownedRouter<AppRoute>
     private let dependencies: AppRequestBMProtocol
     
+   // var showDetailTrigger: AnyObserver<PopularMovieModel>
+    
+    //private(set) lazy var showDetailTrigger =  detailAction
+    
+    
     init(router: UnownedRouter<AppRoute>, dependencies: AppRequestBMProtocol) {
         self.router = router
         self.dependencies = dependencies
+      //  self.showDetailTrigger = detailAction.inputs
     }
+    
     
     
     func loadPopularMovies() -> Observable<[PopularMovieModel]> {
@@ -40,25 +47,10 @@ class HomeVM {
         }
     }
     
-     lazy var detailAction = CocoaAction { [unowned self] in
-        self.router.rx.trigger(.detail)
+     lazy var detailAction = Action<PopularMovieModel, Void> { [unowned self] model in
+        self.router.rx.trigger(.detail(model))
     }
-//    func loadPopularMovies(comlpetion: @escaping (([PopularMovieModel]) -> ())) {
-//        dependencies.getPopularMovie() { [weak self] (responce) in
-//            guard let self = self else { return }
-//
-//            //  print(responce)
-//            switch responce {
-//                case .success(let transaction):
-//                    comlpetion(transaction)
-//                case .failure(let error):
-//                    print(error)
-//            }
-//            // var transactionHistory: TransactionHistoryModel = TransactionHistoryModel()
-//
-//            //  comlpetion(responce)
-//        }
-//    }
+
 
 }
 

@@ -7,6 +7,7 @@
 
 import UIKit
 import XCoordinator
+import PanModal
 
 extension Transition {
 
@@ -27,6 +28,7 @@ extension Transition {
             }
         }
     }
+    
 
 }
 

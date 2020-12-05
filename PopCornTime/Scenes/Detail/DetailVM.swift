@@ -7,14 +7,21 @@
 
 import Foundation
 import XCoordinator
+import Action
+
 class DetailVM  {
     // MARK: Stored properties
     
     private let router: UnownedRouter<AppRoute>
-   // private let dependencies: AppRequestBMProtocol
+    let movie: PopularMovieModel
     
-    init(router: UnownedRouter<AppRoute>) {
+    lazy var closeAction = CocoaAction { [unowned self] in
+        self.router.rx.trigger(.dismiss)
+    }
+    
+    
+    init(router: UnownedRouter<AppRoute>, movie: PopularMovieModel) {
         self.router = router
-      //  self.dependencies = dependencies
+        self.movie = movie
     }
 }

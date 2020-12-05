@@ -40,11 +40,13 @@
 		7B48AAEF2578BAFA000EAE4C /* PopularMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B48AAEE2578BAFA000EAE4C /* PopularMovieModel.swift */; };
 		7B4D2C16257AB31200A549A0 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4D2C15257AB31200A549A0 /* DetailVC.swift */; };
 		7B4D2C1A257AB31A00A549A0 /* DetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4D2C19257AB31A00A549A0 /* DetailVM.swift */; };
-		7B4D2C1D257AB32C00A549A0 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4D2C1C257AB32C00A549A0 /* DetailView.storyboard */; };
 		7B95D9B92578CDBC00C0DEDE /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95D9B82578CDBC00C0DEDE /* BaseResponse.swift */; };
 		7B95DA212578DFA700C0DEDE /* HomeVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95DA202578DFA700C0DEDE /* HomeVMProtocol.swift */; };
 		7B95DA2625791DF300C0DEDE /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95DA2525791DF300C0DEDE /* MovieCell.swift */; };
 		7B95DA2A25791F4600C0DEDE /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95DA2925791F4600C0DEDE /* UIView+Extensions.swift */; };
+		7BBBC37C257B6F770019FD25 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BBBC37B257B6F770019FD25 /* DetailView.storyboard */; };
+		7BBBC39C257B85040019FD25 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBC39B257B85040019FD25 /* CustomTextView.swift */; };
+		7BBBC39F257B87C70019FD25 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBC39E257B87C70019FD25 /* CircularProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,11 +86,13 @@
 		7B48AAEE2578BAFA000EAE4C /* PopularMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieModel.swift; sourceTree = "<group>"; };
 		7B4D2C15257AB31200A549A0 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		7B4D2C19257AB31A00A549A0 /* DetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVM.swift; sourceTree = "<group>"; };
-		7B4D2C1C257AB32C00A549A0 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 		7B95D9B82578CDBC00C0DEDE /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		7B95DA202578DFA700C0DEDE /* HomeVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVMProtocol.swift; sourceTree = "<group>"; };
 		7B95DA2525791DF300C0DEDE /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		7B95DA2925791F4600C0DEDE /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		7BBBC37B257B6F770019FD25 /* DetailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
+		7BBBC39B257B85040019FD25 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		7BBBC39E257B87C70019FD25 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		C1B549016A10EC1E23766DA8 /* Pods-PopCornTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornTime.debug.xcconfig"; path = "Target Support Files/Pods-PopCornTime/Pods-PopCornTime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +210,8 @@
 			children = (
 				7B1C6D3025780FEF004A4B14 /* BindableType.swift */,
 				7B1C6D3325781016004A4B14 /* StatusMessage.swift */,
+				7BBBC39B257B85040019FD25 /* CustomTextView.swift */,
+				7BBBC39E257B87C70019FD25 /* CircularProgressBar.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -272,9 +278,9 @@
 		7B4D2C14257AB30300A549A0 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				7BBBC37B257B6F770019FD25 /* DetailView.storyboard */,
 				7B4D2C15257AB31200A549A0 /* DetailVC.swift */,
 				7B4D2C19257AB31A00A549A0 /* DetailVM.swift */,
-				7B4D2C1C257AB32C00A549A0 /* DetailView.storyboard */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -355,10 +361,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BBBC37C257B6F770019FD25 /* DetailView.storyboard in Resources */,
 				7B1C6D3A25781099004A4B14 /* Localizable.strings in Resources */,
 				7B1C6CEB25780ADA004A4B14 /* LaunchScreen.storyboard in Resources */,
 				7B1C6D812578148E004A4B14 /* HomeView.storyboard in Resources */,
-				7B4D2C1D257AB32C00A549A0 /* DetailView.storyboard in Resources */,
 				7B1C6CE825780ADA004A4B14 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +423,7 @@
 				7B1C6D1E25780F45004A4B14 /* UIViewController.swift in Sources */,
 				7B1C6D6A25781379004A4B14 /* RequestRouter.swift in Sources */,
 				7B1C6D0325780C3A004A4B14 /* AppCooordinator.swift in Sources */,
+				7BBBC39C257B85040019FD25 /* CustomTextView.swift in Sources */,
 				7B1C6D0E25780E68004A4B14 /* HomeVM.swift in Sources */,
 				7B1C6D572578121E004A4B14 /* TransitionAnimation+Defaults.swift in Sources */,
 				7B1C6D6D25781379004A4B14 /* AppRequestBM.swift in Sources */,
@@ -440,6 +447,7 @@
 				7B1C6CDF25780AD9004A4B14 /* AppDelegate.swift in Sources */,
 				7B1C6D6B25781379004A4B14 /* AppRequestManager.swift in Sources */,
 				7B1C6D3D257810D4004A4B14 /* Constant.swift in Sources */,
+				7BBBC39F257B87C70019FD25 /* CircularProgressBar.swift in Sources */,
 				7B1C6D5A25781242004A4B14 /* CGAffineTransform+InPlace.swift in Sources */,
 				7B1C6D3425781016004A4B14 /* StatusMessage.swift in Sources */,
 				7B1C6D3725781039004A4B14 /* Localizations.swift in Sources */,

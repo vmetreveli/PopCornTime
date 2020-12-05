@@ -14,6 +14,7 @@ class HomeVC: UIViewController, BindableType {
     var movieList: [PopularMovieModel] = []
     
     @IBOutlet weak var tableView: UITableView!
+    
     // MARK: Stored properties
     private let disposeBag = DisposeBag()
     
@@ -38,18 +39,17 @@ class HomeVC: UIViewController, BindableType {
         tableView.rx.modelSelected(PopularMovieModel.self)
                .subscribe(onNext: { [weak self] item in
                    // other actions with Item object
-                self?.viewModel.detailAction.execute()
-               }).addDisposableTo(disposeBag)
+                self?.viewModel.detailAction.execute(item)
+               }).disposed(by: disposeBag)
         
-        
+//        tableView.rx.modelSelected(PopularMovieModel.self)
+//            .bind(to: viewModel.showDetailTrigger)
+//            .disposed(by: disposeBag)
+//
+     
     }
     
-    @IBAction func onTap(_ sender: Any) {
-        //        viewModel.loadPopularMovies().subscribe(onNext: { data in
-        //            // print(data[0].originalTitle)
-        //        })
-        //        .disposed(by: disposeBag)
-    }
+ 
     
     
 }

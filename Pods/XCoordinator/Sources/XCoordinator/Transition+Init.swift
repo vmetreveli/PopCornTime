@@ -1,10 +1,7 @@
 //
 //  Transition+Init.swift
 //  XCoordinator
-//
-//  Created by Paul Kraft on 13.09.18.
-//  Copyright © 2018 QuickBird Studios. All rights reserved.
-//
+
 
 import UIKit
 
@@ -53,6 +50,7 @@ extension Transition {
             }
         }
     }
+    
 
     ///
     /// Transition to present the given presentable on the rootViewController.

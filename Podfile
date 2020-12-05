@@ -20,6 +20,7 @@ target 'PopCornTime' do
   pod 'ReachabilitySwift'
     
   pod 'SDWebImage'
+  pod 'PanModal'
 
 
 end
