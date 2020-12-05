@@ -11,46 +11,58 @@ import UIKit
 
 enum AppRoute: Route {
     case home(AppDependencies)
+    case favorite
     //case detail(PopularMovieModel)
-    case dismiss
+    //case dismiss
 }
 
-class AppCoordinator: NavigationCoordinator<AppRoute>{
+class AppCoordinator: TabBarCoordinator<AppRoute>{
     
     var dependencies: AppDependencies!
     var backendManager = BackendManager()
     
     
+    //    // MARK: Initialization
+    //
+    //    init() {
+    //        dependencies = AppDependencies(backendManager: backendManager)
+    //        super.init(initialRoute: .home(dependencies))
+    //    }
+    // MARK: Stored properties
+    
+    private let favoritesRouter: StrongRouter<FavoritesRoute>
+    private let homeRouter: StrongRouter<HomeRoute>
+    
+    // private let userListRouter: StrongRouter<UserListRoute>
+    
     // MARK: Initialization
     
-    init() {
-        dependencies = AppDependencies(backendManager: backendManager)
-        super.init(initialRoute: .home(dependencies))
+    convenience init() {
+        
+        let homeCoordinator = HomeCoordinator()
+        homeCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        
+        let favoritesCoordinator = FavoritesCoordinator()
+        favoritesCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+         
+        self.init(favoritesRouter: favoritesCoordinator.strongRouter, homeRouter: homeCoordinator.strongRouter)
     }
     
+    init(favoritesRouter: StrongRouter<FavoritesRoute>, homeRouter: StrongRouter<HomeRoute>) {
+        self.favoritesRouter = favoritesRouter
+        self.homeRouter = homeRouter
+        
+        super.init(tabs: [homeRouter, favoritesRouter], select: homeRouter)
+    }
     // MARK: Overrides
     
-    override func prepareTransition(for route: AppRoute) -> NavigationTransition {
+    override func prepareTransition(for route: AppRoute) -> TabBarTransition {
         switch route {
-            case .home(let dependencies):
-                let viewController = HomeVC.instantiateFromStoryboard(storyboardName: "HomeView", storyboardId: "HomeView")
-                let viewModel = HomeVM(router: HomeCoordinator().unownedRouter, dependencies: dependencies.backendManager)
-                viewController.bind(to: viewModel)
-               // return .presentFullScreen(viewController)
-               
-                   
-               return .presentFullScreen(HomeCoordinator().strongRouter, animation: .fade)
-            
-//            case .detail(let movie):
-//                let viewController = DetailVC.instantiateFromStoryboard(storyboardName: "DetailView", storyboardId: "DetailView")
-//                let viewModel = DetailVM(router: unownedRouter, movie: movie)
-//                viewController.bind(to: viewModel)
-//                // viewController.presentPanModal(viewController)
-//
-//                return .showDetail(viewController)
+   case .home(let dependencies):
+                return .select(homeRouter)
                 
-            case .dismiss:
-                return .dismiss()
+            case .favorite:
+                return .select(favoritesRouter)
         }
         
     }

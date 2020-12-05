@@ -12,25 +12,17 @@ import XCoordinator
 
 enum FavoritesRoute: Route {
     case home
-    //    case users
-    //    case user(String)
-    //    case registerUsersPeek(from: Container)
-    //    case logout
-    //    case about
+    
 }
 
 class FavoritesCoordinator: NavigationCoordinator<FavoritesRoute> {
     
     // MARK: Initialization
+
+    init() {
+        super.init(initialRoute: .home)
+    }
     
-//    init(rootViewController: UINavigationController) {
-//        super.init(rootViewController: rootViewController, initialRoute: nil)
-//        trigger(.home)
-//    }
-//    init() {
-//        //super.init(initialRoute: .home)
-//    }
-//    
     
     // MARK: Overrides
     

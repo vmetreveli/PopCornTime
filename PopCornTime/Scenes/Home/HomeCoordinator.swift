@@ -8,44 +8,35 @@
 import UIKit
 import XCoordinator
 
-public enum HomeRoute: Route {
-    case favorites
+enum HomeRoute: Route {
+    case home(AppDependencies)
     case detail(PopularMovieModel)
     case dismiss
 }
 
-public class HomeCoordinator: TabBarCoordinator<HomeRoute> {
+class HomeCoordinator: NavigationCoordinator<HomeRoute> {
     
     // MARK: Stored properties
-    
-    private let favoritesRouter: StrongRouter<FavoritesRoute>
-    // private let userListRouter: StrongRouter<UserListRoute>
+    var dependencies: AppDependencies!
+    var backendManager = BackendManager()
     
     // MARK: Initialization
     
-    convenience init() {
-        let favoritesCoordinator = FavoritesCoordinator()
-        favoritesCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .recents, tag: 0)
-        
-        //        let userListCoordinator = UserListCoordinator()
-        //        userListCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
-        
-        self.init(favoritesRouter: favoritesCoordinator.strongRouter)
-    }
-    
-    init(favoritesRouter: StrongRouter<FavoritesRoute>) {
-        self.favoritesRouter = favoritesRouter
-        //self.userListRouter = userListRouter
-        
-        super.init(tabs: [favoritesRouter], select: favoritesRouter)
+    init() {
+        dependencies = AppDependencies(backendManager: backendManager)
+        super.init(initialRoute: .home(dependencies))
     }
     
     // MARK: Overrides
     
-    public override func prepareTransition(for route: HomeRoute) -> TabBarTransition {
+    override func prepareTransition(for route: HomeRoute) -> NavigationTransition {
         switch route {
-            case .favorites:
-                return .select(favoritesRouter)
+             case .home(let dependencies):
+                let viewController = HomeVC.instantiateFromStoryboard(storyboardName: "HomeView", storyboardId: "HomeView")
+                let viewModel = HomeVM(router: unownedRouter, dependencies: dependencies.backendManager)
+                viewController.bind(to: viewModel)
+                return .push(viewController)
+                
             case .detail(let movie):
                 let viewController = DetailVC.instantiateFromStoryboard(storyboardName: "DetailView", storyboardId: "DetailView")
                 let viewModel = DetailVM(router: unownedRouter, movie: movie)
