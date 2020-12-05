@@ -12,7 +12,7 @@ import Action
 class DetailVM  {
     // MARK: Stored properties
     
-    private let router: UnownedRouter<AppRoute>
+    private let router: UnownedRouter<HomeRoute>
     let movie: PopularMovieModel
     
     lazy var closeAction = CocoaAction { [unowned self] in
@@ -20,7 +20,7 @@ class DetailVM  {
     }
     
     
-    init(router: UnownedRouter<AppRoute>, movie: PopularMovieModel) {
+    init(router: UnownedRouter<HomeRoute>, movie: PopularMovieModel) {
         self.router = router
         self.movie = movie
     }

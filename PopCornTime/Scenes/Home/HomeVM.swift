@@ -15,7 +15,7 @@ class HomeVM {
     
     // MARK: Stored properties
     
-    private let router: UnownedRouter<AppRoute>
+    private let router: UnownedRouter<HomeRoute>
     private let dependencies: AppRequestBMProtocol
     
    // var showDetailTrigger: AnyObserver<PopularMovieModel>
@@ -23,7 +23,7 @@ class HomeVM {
     //private(set) lazy var showDetailTrigger =  detailAction
     
     
-    init(router: UnownedRouter<AppRoute>, dependencies: AppRequestBMProtocol) {
+    init(router: UnownedRouter<HomeRoute>, dependencies: AppRequestBMProtocol) {
         self.router = router
         self.dependencies = dependencies
       //  self.showDetailTrigger = detailAction.inputs
