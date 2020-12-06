@@ -56,11 +56,7 @@ class DetailVC: UIViewController, BindableType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        imoviePoster.sd_setImage(with: URL(string: viewModel.movie.posterPath!), placeholderImage: UIImage(named: "offer_placeholder"), options: .retryFailed, completed: nil)
-        descriptionLabel.text = viewModel.movie.overview
-        titleLabel.text = viewModel.movie.title
-        progressBar.labelSize = 15
+       
         
         self.progressBar.setProgress(to:  viewModel.movie.voteAverage! / 10, withAnimation: true)
         
@@ -73,9 +69,13 @@ class DetailVC: UIViewController, BindableType {
             }
         }).disposed(by: self.disposeBag)
         
-       // panModalSetNeedsLayoutUpdate()
+        
+        imoviePoster.sd_setImage(with: URL(string: viewModel.movie.posterPath!), placeholderImage: UIImage(named: "offer_placeholder"), options: .retryFailed, completed: nil)
+        descriptionLabel.text = viewModel.movie.overview
+        titleLabel.text = viewModel.movie.title
+        progressBar.labelSize = 15
     }
-    
+
 }
 
 //==============================================================

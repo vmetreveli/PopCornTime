@@ -18,10 +18,7 @@ class HomeVM {
     private let router: UnownedRouter<HomeRoute>
     private let dependencies: AppRequestBMProtocol
     
-   // var showDetailTrigger: AnyObserver<PopularMovieModel>
-    
-    //private(set) lazy var showDetailTrigger =  detailAction
-    
+    var dataSource = BehaviorRelay(value: [PopularMovieModel]())
     
     init(router: UnownedRouter<HomeRoute>, dependencies: AppRequestBMProtocol) {
         self.router = router
@@ -48,8 +45,7 @@ class HomeVM {
     }
     
      lazy var detailAction = Action<PopularMovieModel, Void> { [unowned self] model in
-        
-        model.posterPath = "\(Constant.imagebaseURL)\(model.posterPath!)"
+       model.posterPath = "\(Constant.imagebaseURL)\(model.posterPath!)"
       return   self.router.rx.trigger(.detail(model))
     }
 

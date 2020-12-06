@@ -11,23 +11,30 @@ import UIKit
 
 class HomeVC: UIViewController, BindableType {
     var viewModel: HomeVM!
-    var movieList: [PopularMovieModel] = []
+    let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Stored properties
     private let disposeBag = DisposeBag()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 250
         
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        loadData()
+        
     }
     
     func bindViewModel() {
-        viewModel.loadPopularMovies().asObservable()
+        tableView.refreshControl = refreshControl
+        tableView.estimatedRowHeight = 250
+        
+        viewModel.dataSource
             .bind(to: tableView.rx.items) { (tableView, row, element) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.identifier) as! MovieCell
                 cell.configCell(with: element)
@@ -42,16 +49,29 @@ class HomeVC: UIViewController, BindableType {
                 self?.viewModel.detailAction.execute(item)
                }).disposed(by: disposeBag)
         
-//        tableView.rx.modelSelected(PopularMovieModel.self)
-//            .bind(to: viewModel.showDetailTrigger)
-//            .disposed(by: disposeBag)
-//
+
      
     }
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
     
- 
+    
+    func loadData(){
+        viewModel.loadPopularMovies()
+            .subscribe(onNext:
+                        { [weak self] data in
+                            self?.viewModel.dataSource.accept(data)
+                            self?.refreshControl.endRefreshing()
+
+                        })
+    }
     
     
+    @objc func refresh(_ sender: AnyObject) {
+        loadData()
+    }
+   
 }
 
 

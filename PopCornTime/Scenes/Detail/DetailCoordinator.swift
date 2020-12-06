@@ -11,8 +11,7 @@ import Foundation
 import XCoordinator
 
 enum DetailsRoute: Route {
-    case dismiss
-    case home(PopularMovieModel)
+     case home(PopularMovieModel)
 }
 
 class DetailCoordinator: NavigationCoordinator<DetailsRoute> {
@@ -34,11 +33,6 @@ class DetailCoordinator: NavigationCoordinator<DetailsRoute> {
             let viewModel = DetailVM(router: unownedRouter, movie: movie, dataManager: dependencies.dataManager)
             viewController.bind(to: viewModel)
            return .showDetail(viewController)
-        case .dismiss:
-            //return .dismissToRoot()
-            let alert = UIAlertController(title: "f", message: "message", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            return .present(alert)
         }
     }
     

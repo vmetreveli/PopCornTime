@@ -40,25 +40,21 @@ class DetailVM {
             
             if self.dataManager.getFavorites(by: Int32(self.movie.id!)) == nil
             {
-              //  self.movie.posterPath =
                 self.dataManager.saveFavorites(with: [self.movie])
                 observer.onNext(.save)
             }else{
                 self.dataManager.deleteFavorite(by: Int32(self.movie.id!))
                 observer.onNext(.remove)
             }
-            
-            //  self.dataManager.saveFavorites(with: [self.movie])
-            
-            
-            return Disposables.create()
+        return Disposables.create()
         }
     }
     
     func loadFavorites() -> Observable<Status> {
         return Observable.create { observer -> Disposable in
-            if self.dataManager.getFavorites(by: Int32(self.movie.id!)) != nil
+            if let data = self.dataManager.getFavorites(by: Int32(self.movie.id!))
             {
+                self.movie.posterPath = data.moviePoster
                 observer.onNext(.save)
             }else{
                 observer.onNext(.remove)

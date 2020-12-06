@@ -15,7 +15,7 @@ class FavoritesVC: UIViewController, BindableType {
     private let disposeBag = DisposeBag()
     
     @IBOutlet weak var tableView: UITableView!
-    var refreshControl = UIRefreshControl()
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +27,10 @@ class FavoritesVC: UIViewController, BindableType {
     
     func bindViewModel() {
         
-        //tableView.backgroundColor = UIColor.bGGrey
-       // tableView.addSubview(refreshControl)
+      
         tableView.refreshControl = refreshControl
         tableView.estimatedRowHeight = 250
-        
-        //viewModel.loadFavoritesMovies().asObservable()
+      
         viewModel.dataSource.bind(to: tableView.rx.items) { (tableView, row, element) in
             let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCell.identifier) as! FavoriteCell
             cell.configCell(with: element)
