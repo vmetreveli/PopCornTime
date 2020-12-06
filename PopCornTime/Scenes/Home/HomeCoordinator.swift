@@ -40,7 +40,7 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
             case .detail(let movie):
                 let viewController = DetailVC.instantiateFromStoryboard(storyboardName: "DetailView", storyboardId: "DetailView")
                 
-                let viewModel = DetailVM(router: unownedRouter, movie: movie, dataManager: dependencies.dataManager)
+                let viewModel = DetailVM(router: DetailCoordinator(movie: movie).unownedRouter, movie: movie, dataManager: dependencies.dataManager)
                 viewController.bind(to: viewModel)
                 // viewController.presentPanModal(viewController)
                 

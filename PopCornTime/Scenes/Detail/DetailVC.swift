@@ -26,15 +26,15 @@ class DetailVC: UIViewController, BindableType {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     
-    //  @IBOutlet weak var newPriceLabel: CustomLabel!
+    // @IBOutlet weak var newPriceLabel: CustomLabel!
     
     func bindViewModel() {
-        btnBack.rx.tap
-            .bind {
-                self.viewModel.closeAction.execute()
-            }
-            .disposed(by: disposeBag)
-        
+//        btnBack.rx.tap
+//            .bind {
+//                self.viewModel.closeAction.execute()
+//            }
+//            .disposed(by: disposeBag)
+//        
         saveButton.rx.tap
             .bind {
                 self.viewModel.save().asObservable().subscribe(onNext:{ [weak self] status in
@@ -73,7 +73,7 @@ class DetailVC: UIViewController, BindableType {
             }
         }).disposed(by: self.disposeBag)
         
-        panModalSetNeedsLayoutUpdate()
+       // panModalSetNeedsLayoutUpdate()
     }
     
 }
@@ -82,47 +82,47 @@ class DetailVC: UIViewController, BindableType {
 //    MARK: - PanModalPresentable
 //==============================================================
 
-extension DetailVC: PanModalPresentable {
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    var panScrollable: UIScrollView? {
-        return self.scrollView
-    }
-    
-    var longFormHeight: PanModalHeight {
-        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        return .contentHeight(min(contentSize, UIScreen.main.bounds.height))
-    }
-    
-    
-    
-    
-    
-    //    var anchorModalToLongForm: Bool {
-    //        return false
-    //    }
-    //
-    //    var shouldRoundTopCorners: Bool {
-    //        return true
-    //    }
-    //
-    //    var allowsDragToDismiss: Bool {
-    //        return true
-    //    }
-    //
-    //    var allowsTapToDismiss: Bool {
-    //        return true
-    //    }
-    //
-    //     var isUserInteractionEnabled: Bool {
-    //           return true
-    //       }
-    //
-    //     var showDragIndicator: Bool {
-    //         return true
-    //     }
-}
+//extension DetailVC: PanModalPresentable {
+//
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
+//
+//    var panScrollable: UIScrollView? {
+//        return self.scrollView
+//    }
+//
+//    var longFormHeight: PanModalHeight {
+//        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        return .contentHeight(min(contentSize, UIScreen.main.bounds.height))
+//    }
+//
+//
+//
+//
+//
+//    //    var anchorModalToLongForm: Bool {
+//    //        return false
+//    //    }
+//    //
+//    //    var shouldRoundTopCorners: Bool {
+//    //        return true
+//    //    }
+//    //
+//    //    var allowsDragToDismiss: Bool {
+//    //        return true
+//    //    }
+//    //
+//    //    var allowsTapToDismiss: Bool {
+//    //        return true
+//    //    }
+//    //
+//    //     var isUserInteractionEnabled: Bool {
+//    //           return true
+//    //       }
+//    //
+//    //     var showDragIndicator: Bool {
+//    //         return true
+//    //     }
+//}

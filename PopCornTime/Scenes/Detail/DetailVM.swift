@@ -18,17 +18,18 @@ public enum Status{
 class DetailVM {
     // MARK: Stored properties
     
-    private let router: UnownedRouter<HomeRoute>
+    private let router: UnownedRouter<DetailsRoute>
     var movie: PopularMovieModel
     
     let dataManager: DataManagerProtocol
     
-    lazy var closeAction = CocoaAction {
-        [unowned self] in
-      self.router.rx.trigger(HomeRoute.dismiss)
-    }
+//    lazy var closeAction = CocoaAction {
+//        [unowned self] in
+//        self.router.rx.trigger(.dismiss)
+//      
+//    }
     
-    init(router: UnownedRouter<HomeRoute>, movie: PopularMovieModel, dataManager: DataManagerProtocol) {
+    init(router: UnownedRouter<DetailsRoute>, movie: PopularMovieModel, dataManager: DataManagerProtocol) {
         self.router = router
         self.movie = movie
         self.dataManager = dataManager

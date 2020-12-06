@@ -120,8 +120,9 @@ extension DataManager {
         fetch.fetchLimit = 1
         fetch.predicate = predicate
         do {
-            guard var model = try persistentContainer.viewContext.fetch(fetch) as? [Favorites] else { return }
+            guard let model = try persistentContainer.viewContext.fetch(fetch) as? [Favorites] else { return }
             context.delete(model.first!)
+            try context.save()
         } catch {
             print(error)
         }
