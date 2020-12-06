@@ -15,7 +15,7 @@ public enum Status{
     case save
 }
 
-class DetailVM  {
+class DetailVM {
     // MARK: Stored properties
     
     private let router: UnownedRouter<HomeRoute>
@@ -25,7 +25,7 @@ class DetailVM  {
     
     lazy var closeAction = CocoaAction {
         [unowned self] in
-        self.router.rx.trigger(.dismiss)
+      self.router.rx.trigger(HomeRoute.dismiss)
     }
     
     init(router: UnownedRouter<HomeRoute>, movie: PopularMovieModel, dataManager: DataManagerProtocol) {

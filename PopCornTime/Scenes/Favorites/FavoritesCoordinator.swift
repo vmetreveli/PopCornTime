@@ -41,7 +41,7 @@ class FavoritesCoordinator: NavigationCoordinator<FavoritesRoute> {
                 
             case .detail(let movie):
                 let viewController = DetailVC.instantiateFromStoryboard(storyboardName: "DetailView", storyboardId: "DetailView")
-             let viewModel = DetailVM(router: HomeCoordinator().unownedRouter, movie: movie, dataManager: dependencies.dataManager)
+                let viewModel = DetailVM(router: HomeCoordinator().unownedRouter, movie: movie, dataManager: dependencies.dataManager)
                 viewController.bind(to: viewModel)
                return .showDetail(viewController)
         }
