@@ -52,7 +52,7 @@ class AppCoordinator: TabBarCoordinator<AppRoute>{
     
     override func prepareTransition(for route: AppRoute) -> TabBarTransition {
         switch route {
-        case .home(let _):
+        case .home(_):
                 return .select(homeRouter)
                 
             case .favorite:

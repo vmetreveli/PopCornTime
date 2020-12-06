@@ -16,8 +16,11 @@ protocol AppRequestBMProtocol: class {
 extension BackendManager: AppRequestBMProtocol{
     func getPopularMovie(completionHandler: @escaping PopularMovieDataCompletionHandler) {
         sendRequest(AppRequestRouter.getPopularMovies, successBlock: { [weak self] (result) in
-            guard let strongSelf = self, let response = result as? Any else { completionHandler(.failure(.parsError))
-                return }
+            guard let strongSelf = self, let response = result as? Any
+            else {
+                completionHandler(.failure(.parsError))
+                return
+            }
             strongSelf.parsePopularMovieData(response, completionHandler: completionHandler)
             
         }) { (error) in
