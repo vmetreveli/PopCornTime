@@ -35,9 +35,7 @@ class AppCoordinator: TabBarCoordinator<AppRoute>{
         
         let homeCoordinator = HomeCoordinator()
         homeCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "icons8-fire"), tag: 0)
-        
-       // (tab: 1, image: UIImage(named: "selected-image"))
-        
+      
         let favoritesCoordinator = FavoritesCoordinator()
         favoritesCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "icons8-star"), tag: 1)
          
@@ -54,7 +52,7 @@ class AppCoordinator: TabBarCoordinator<AppRoute>{
     
     override func prepareTransition(for route: AppRoute) -> TabBarTransition {
         switch route {
-   case .home(let dependencies):
+        case .home(let _):
                 return .select(homeRouter)
                 
             case .favorite:

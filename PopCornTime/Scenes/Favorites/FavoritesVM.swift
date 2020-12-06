@@ -15,6 +15,7 @@ class FavoritesVM {
     
     private let router: UnownedRouter<FavoritesRoute>
     private let dataManager: DataManagerProtocol
+    var dataSource = BehaviorRelay(value: [Favorites]())
   
     init(router: UnownedRouter<FavoritesRoute>,  dataManager: DataManagerProtocol) {
         self.router = router
@@ -38,7 +39,7 @@ class FavoritesVM {
         favorite.posterPath = model.moviePoster
         favorite.voteAverage = model.voteAverage
         
-      return   self.router.rx.trigger(.detail(favorite))
+      return self.router.rx.trigger(.detail(favorite))
    }
 }
 

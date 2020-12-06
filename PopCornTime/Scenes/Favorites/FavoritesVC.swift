@@ -15,16 +15,31 @@ class FavoritesVC: UIViewController, BindableType {
     private let disposeBag = DisposeBag()
     
     @IBOutlet weak var tableView: UITableView!
+    var refreshControl = UIRefreshControl()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        refreshControl.attributedTitle = NSAttributedString(string: "refresh")
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        loadData()
+    }
     
     func bindViewModel() {
-        viewModel.loadFavoritesMovies().asObservable()
-            .bind(to: tableView.rx.items) { (tableView, row, element) in
-                let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCell.identifier) as! FavoriteCell
-                cell.configCell(with: element)
-                cell.selectionStyle = .none
-                return cell
-            }
-            .disposed(by: disposeBag)
+        
+        //tableView.backgroundColor = UIColor.bGGrey
+       // tableView.addSubview(refreshControl)
+        tableView.refreshControl = refreshControl
+        tableView.estimatedRowHeight = 250
+        
+        //viewModel.loadFavoritesMovies().asObservable()
+        viewModel.dataSource.bind(to: tableView.rx.items) { (tableView, row, element) in
+            let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCell.identifier) as! FavoriteCell
+            cell.configCell(with: element)
+            cell.selectionStyle = .none
+            return cell
+        }
+        .disposed(by: disposeBag)
         
         
         tableView.rx.modelSelected(Favorites.self)
@@ -35,9 +50,21 @@ class FavoritesVC: UIViewController, BindableType {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        loadData()
     }
     
+    
+    @objc func refresh(_ sender: AnyObject) {
+        loadData()
+    }
+    
+    func loadData(){
+        viewModel.loadFavoritesMovies()
+            .subscribe(onNext:
+                        { [weak self] data in
+                            self?.viewModel.dataSource.accept(data)
+                            self?.refreshControl.endRefreshing()
+
+                        })
+    }
 }
