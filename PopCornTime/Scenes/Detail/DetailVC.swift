@@ -57,6 +57,7 @@ class DetailVC: UIViewController, BindableType {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        title =  "Detail"
         
         self.progressBar.setProgress(to:  viewModel.movie.voteAverage! / 10, withAnimation: true)
         

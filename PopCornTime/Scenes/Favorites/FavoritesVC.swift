@@ -19,6 +19,7 @@ class FavoritesVC: UIViewController, BindableType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title =  "Favorites"
         refreshControl.attributedTitle = NSAttributedString(string: "refresh")
         refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)

@@ -20,7 +20,7 @@ class HomeVC: UIViewController, BindableType {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title =  "Popular Movies"
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 250
         
