@@ -57,6 +57,8 @@
 		7BCFE89D257BD665006C7497 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCFE89C257BD665006C7497 /* Date+Ex.swift */; };
 		7BCFE8BD257C0A08006C7497 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCFE8BC257C0A08006C7497 /* FavoriteCell.swift */; };
 		7BCFE8C0257C0AA6006C7497 /* FavoritesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BCFE8BF257C0AA6006C7497 /* FavoritesView.storyboard */; };
+		7BFCFB86257EB86F0000ADB7 /* UITableView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCFB85257EB86F0000ADB7 /* UITableView+Ex.swift */; };
+		7BFCFB89257EB8A30000ADB7 /* Reactive+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFCFB88257EB8A30000ADB7 /* Reactive+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +115,8 @@
 		7BCFE89C257BD665006C7497 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		7BCFE8BC257C0A08006C7497 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		7BCFE8BF257C0AA6006C7497 /* FavoritesView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FavoritesView.storyboard; sourceTree = "<group>"; };
+		7BFCFB85257EB86F0000ADB7 /* UITableView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ex.swift"; sourceTree = "<group>"; };
+		7BFCFB88257EB8A30000ADB7 /* Reactive+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Ex.swift"; sourceTree = "<group>"; };
 		C1B549016A10EC1E23766DA8 /* Pods-PopCornTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornTime.debug.xcconfig"; path = "Target Support Files/Pods-PopCornTime/Pods-PopCornTime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +250,8 @@
 				7B1C6D4D257811C3004A4B14 /* Animation+Navigation.swift */,
 				7B1C6D50257811DC004A4B14 /* Animation+Scale.swift */,
 				7B1C6D53257811F4004A4B14 /* Animation+Swirl.swift */,
+				7BFCFB85257EB86F0000ADB7 /* UITableView+Ex.swift */,
+				7BFCFB88257EB8A30000ADB7 /* Reactive+Ex.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BFCFB86257EB86F0000ADB7 /* UITableView+Ex.swift in Sources */,
 				7B48AAEF2578BAFA000EAE4C /* PopularMovieModel.swift in Sources */,
 				7B1C6D6825781379004A4B14 /* NetworkManager.swift in Sources */,
 				7BCFE89D257BD665006C7497 /* Date+Ex.swift in Sources */,
@@ -479,6 +486,7 @@
 				7B5AF7F6257D1A0300BBB7CC /* DetailCoordinator.swift in Sources */,
 				7BCFE896257BD1CD006C7497 /* Favorites+Ex.swift in Sources */,
 				7B1C6D51257811DC004A4B14 /* Animation+Scale.swift in Sources */,
+				7BFCFB89257EB8A30000ADB7 /* Reactive+Ex.swift in Sources */,
 				7B1C6D6925781379004A4B14 /* BackendManager.swift in Sources */,
 				7B95DA2A25791F4600C0DEDE /* UIView+Extensions.swift in Sources */,
 				7B1C6D6C25781379004A4B14 /* AppRequestRouter.swift in Sources */,

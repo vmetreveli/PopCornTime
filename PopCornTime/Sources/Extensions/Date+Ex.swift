@@ -5,10 +5,9 @@
 //  Created by vakhushti metreveli on 05.12.20.
 //
 
-import Foundation
-
-
-import Foundation
+import UIKit
+import RxSwift
+import RxCocoa
 
 extension Date {
 
@@ -39,8 +38,5 @@ extension Date {
         
         return calendar.component(component, from: self)
     }
-    
-    
-    
 
 }

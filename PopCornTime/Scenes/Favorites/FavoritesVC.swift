@@ -16,6 +16,7 @@ class FavoritesVC: UIViewController, BindableType {
     
     @IBOutlet weak var tableView: UITableView!
     let refreshControl = UIRefreshControl()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,29 +24,37 @@ class FavoritesVC: UIViewController, BindableType {
         refreshControl.attributedTitle = NSAttributedString(string: "refresh")
         refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        
+        tableView.refreshControl = refreshControl
+        tableView.estimatedRowHeight = 250
+        tableView.separatorStyle = .none
+       // self.tableView.backgroundView =  UIImageView(image: UIImage(named: "nothing-found"))
+        
         loadData()
     }
     
     func bindViewModel() {
         
-      
-        tableView.refreshControl = refreshControl
-        tableView.estimatedRowHeight = 250
-      
-        viewModel.dataSource.bind(to: tableView.rx.items) { (tableView, row, element) in
+         viewModel.dataSource.bind(to: tableView.rx.items) { (tableView, row, element) in
             let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCell.identifier) as! FavoriteCell
             cell.configCell(with: element)
             cell.selectionStyle = .none
             return cell
-        }
-        .disposed(by: disposeBag)
+         }
+         .disposed(by: disposeBag)
         
+        let isEmpty = tableView.rx.isEmpty(image: UIImage(named: "nothing-found")!)
+    
+        
+        viewModel.dataSource.map{ $0.count <= 0 }.distinctUntilChanged().bind(to: isEmpty)
         
         tableView.rx.modelSelected(Favorites.self)
             .subscribe(onNext: { [weak self] item in
                 // other actions with Item object
                 self?.viewModel.detailAction.execute(item)
             }).disposed(by: disposeBag)
+        
+          // tableView.responses.map({ $0.count <= 0 }).distinctUntilChanged().bind(to: isEmpty).disposed(by: disposeBag)
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -58,12 +67,13 @@ class FavoritesVC: UIViewController, BindableType {
     }
     
     func loadData(){
+      
         viewModel.loadFavoritesMovies()
             .subscribe(onNext:
                         { [weak self] data in
                             self?.viewModel.dataSource.accept(data)
                             self?.refreshControl.endRefreshing()
 
-                        })
+                        }).disposed(by: disposeBag)
     }
 }
