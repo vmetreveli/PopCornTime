@@ -8,8 +8,9 @@
         <attribute name="voteAverage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
 
+
     <elements>
         <element name="Favorites" positionX="-63" positionY="-18" width="128" height="104"/>
-        
+ 
     </elements>
 </model>
