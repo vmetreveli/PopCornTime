@@ -12,11 +12,10 @@ import SDWebImage
 
 
 final class MovieCell: UITableViewCell{
-    @IBOutlet weak var movieNameLabel: UILabel!
-    
-    
-    @IBOutlet  weak var poster: UIImageView!
-   // public let backgroundImageView = UIImageView()
+   
+     @IBOutlet weak var movieNameLabel: UILabel!
+     @IBOutlet  weak var poster: UIImageView!
+    // public let backgroundImageView = UIImageView()
     public let verticalStackView = UIStackView()
     
     override func awakeFromNib() {
@@ -24,25 +23,22 @@ final class MovieCell: UITableViewCell{
         selectionStyle = .none
         //layer.cornerRadius = 10
         //layer.masksToBounds = true
-        layer.transform = CATransform3DMakeScale(0.1,0.1,0.1)
-        setupViews()
-        //setupHierarchy()
-       // setupLayouts()
+        layer.transform = CATransform3DMakeScale(1,1,1)
+      //  setupViews()
+      //  setupHierarchy()
+        // setupLayouts()
         
     }
     
-       @objc class var identifier: String {
-            return String(describing: self)
-        }
-  
+    
+    
     private func setupViews() {
         //backgroundImageView
         [movieNameLabel!, verticalStackView].forEach(
             {
                 $0.translatesAutoresizingMaskIntoConstraints = false
-                
             })
-
+        
         movieNameLabel!.font = .systemFont(ofSize: 18, weight: .regular)
         movieNameLabel!.textColor = .black
         verticalStackView.axis = .vertical
@@ -53,26 +49,15 @@ final class MovieCell: UITableViewCell{
         // self.contentView.addSubview(backgroundImageView)
         self.contentView.addSubview(verticalStackView)
         self.contentView.addSubview(movieNameLabel!)
-
-        verticalStackView.addArrangedSubview(UIView())
-
-    }
-
-
-    func configCell(with viewModel: PopularMovieModel) {
         
-        movieNameLabel!.text = viewModel.originalTitle
+        verticalStackView.addArrangedSubview(UIView())
+        
+    }
     
+    
+    func configCell(with viewModel: PopularMovieModel) {
+        movieNameLabel!.text = viewModel.originalTitle
         poster.sd_setImage(with: URL(string: ("\(Constant.imagebaseURL)\(viewModel.posterPath!)")), placeholderImage: UIImage(named: "offer_placeholder"), options: .retryFailed, completed: nil)
-  
-        UIView.animate(withDuration: 0.3, animations: {
-            self.layer.transform = CATransform3DMakeScale(1.5,1.5,1.5)
-               },completion: { finished in
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.layer.transform = CATransform3DMakeScale(1,1,1)
-                   // cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
-                   })
-           })
     }
 }
 

@@ -39,6 +39,7 @@ class FavoritesVC: UIViewController, BindableType {
             let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCell.identifier) as! FavoriteCell
             cell.configCell(with: element)
             cell.selectionStyle = .none
+            cell.animation()
             return cell
          }
          .disposed(by: disposeBag)

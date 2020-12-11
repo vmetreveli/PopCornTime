@@ -114,5 +114,10 @@ struct Constant {
         static var USER_DATA = "USER_DATA"
     }
  
+    
+    static let notchWidth: CGFloat = 209
+    static let notchHeight: CGFloat = 26
+    static let maxScrollOffset: CGFloat = -86
+    static let notchViewTopInset: CGFloat = 40
 }
 

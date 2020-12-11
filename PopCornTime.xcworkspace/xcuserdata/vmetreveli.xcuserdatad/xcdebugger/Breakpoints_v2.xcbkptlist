@@ -7,49 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E7838344-5B72-4CB3-8A39-F1A2A230A252"
+            uuid = "4857E29E-8D54-42A6-92AC-74CAE0691775"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PopCornTime/Scenes/Home/HomeVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "loadPopularMovies()"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "detailAction"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58256D89-6AAD-4F06-A70D-ECFEA1FCF7AA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PopCornTime/Scenes/Home/HomeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E7838344-5B72-4CB3-8A39-F1A2A230A252 - 1e41ae8f84089f95"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RxSwift.AnyObserver&lt;Swift.Array&lt;PopCornTime.PopularMovieModel&gt;&gt;) -&gt; RxSwift.Disposable in PopCornTime.HomeVM.loadPopularMovies() -&gt; RxSwift.Observable&lt;Swift.Array&lt;PopCornTime.PopularMovieModel&gt;&gt;"
-                  moduleName = "PopCornTime"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Scenes/Home/HomeVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "37">
-               </Location>
-               <Location
-                  uuid = "E7838344-5B72-4CB3-8A39-F1A2A230A252 - 19bd9b564638bf70"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;PopCornTime.PopularMovieModel&gt;, PopCornTime.StatusMessage&gt;) -&gt; () in closure #1 (RxSwift.AnyObserver&lt;Swift.Array&lt;PopCornTime.PopularMovieModel&gt;&gt;) -&gt; RxSwift.Disposable in PopCornTime.HomeVM.loadPopularMovies() -&gt; RxSwift.Observable&lt;Swift.Array&lt;PopCornTime.PopularMovieModel&gt;&gt;"
-                  moduleName = "PopCornTime"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vmetreveli/Library/Mobile%20Documents/com~apple~CloudDocs/Projects/PopCornTime/PopCornTime/Scenes/Home/HomeVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "120">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

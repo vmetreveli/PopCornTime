@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		129A56C6C81FCBE1CEA4A5F3 /* Pods_PopCornTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730C3D0E400233CD97B998E9 /* Pods_PopCornTime.framework */; };
+		7B1113E82582965D00E0075E /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1113E72582965D00E0075E /* UITableViewCell+Extensions.swift */; };
 		7B1C6CDF25780AD9004A4B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1C6CDE25780AD9004A4B14 /* AppDelegate.swift */; };
 		7B1C6CE825780ADA004A4B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B1C6CE725780ADA004A4B14 /* Assets.xcassets */; };
 		7B1C6CEB25780ADA004A4B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1C6CE925780ADA004A4B14 /* LaunchScreen.storyboard */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		47FA746C2A9B552E0530F670 /* Pods-PopCornTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopCornTime.release.xcconfig"; path = "Target Support Files/Pods-PopCornTime/Pods-PopCornTime.release.xcconfig"; sourceTree = "<group>"; };
 		730C3D0E400233CD97B998E9 /* Pods_PopCornTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopCornTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B1113E72582965D00E0075E /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		7B1C6CDB25780AD9004A4B14 /* PopCornTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopCornTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1C6CDE25780AD9004A4B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B1C6CE725780ADA004A4B14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				7B1C6D5925781242004A4B14 /* CGAffineTransform+InPlace.swift */,
 				7B95DA2925791F4600C0DEDE /* UIView+Extensions.swift */,
 				7BCFE89C257BD665006C7497 /* Date+Ex.swift */,
+				7B1113E72582965D00E0075E /* UITableViewCell+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				7B4D2C16257AB31200A549A0 /* DetailVC.swift in Sources */,
 				7BBBC3CE257BA9D50019FD25 /* FavoritesCoordinator.swift in Sources */,
 				7BCFE893257BD092006C7497 /* Model.xcdatamodeld in Sources */,
+				7B1113E82582965D00E0075E /* UITableViewCell+Extensions.swift in Sources */,
 				7BCFE899257BD3D3006C7497 /* DataManager.swift in Sources */,
 				7B1C6D3125780FEF004A4B14 /* BindableType.swift in Sources */,
 				7B95DA2625791DF300C0DEDE /* MovieCell.swift in Sources */,

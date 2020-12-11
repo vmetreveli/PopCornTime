@@ -44,6 +44,7 @@ class HomeVC: UIViewController, BindableType {
             .bind(to: tableView.rx.items) { (tableView, row, element) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.identifier) as! MovieCell
                 cell.configCell(with: element)
+               // cell.animation()
                
                 return cell
             }
