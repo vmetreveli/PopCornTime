@@ -13,6 +13,11 @@ class HomeVC: UIViewController, BindableType {
     var viewModel: HomeVM!
     let refreshControl = UIRefreshControl()
     
+    fileprivate var notchView = UIView()
+    fileprivate var notchViewBottomConstraint: NSLayoutConstraint!
+    fileprivate var numberOfItemsInSection = 1
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Stored properties
@@ -27,6 +32,7 @@ class HomeVC: UIViewController, BindableType {
         refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         loadData()
+  
         
     }
     
@@ -38,7 +44,7 @@ class HomeVC: UIViewController, BindableType {
             .bind(to: tableView.rx.items) { (tableView, row, element) in
                 let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.identifier) as! MovieCell
                 cell.configCell(with: element)
-                cell.selectionStyle = .none
+               
                 return cell
             }
             .disposed(by: disposeBag)
@@ -48,6 +54,21 @@ class HomeVC: UIViewController, BindableType {
                    // other actions with Item object
                 self?.viewModel.detailAction.execute(item)
                }).disposed(by: disposeBag)
+        
+//        tableView.rx.itemSelected
+//          .subscribe(onNext: { [weak self]indexPath in
+//            let cell = self?.tableView.cellForRow(at: indexPath) as? MovieCell
+//            //cell.button.isEnabled = false
+//            
+//            UIView.animate(withDuration: 0.3, animations: {
+//                cell?.layer.transform = CATransform3DMakeScale(1.5,1.5,1.5)
+//                   },completion: { finished in
+//                    UIView.animate(withDuration: 0.3, animations: {
+//                        cell?.layer.transform = CATransform3DMakeScale(1,1,1)
+//                       // cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+//                       })
+//               })
+//          }).disposed(by: disposeBag)
         
 
      
@@ -71,6 +92,8 @@ class HomeVC: UIViewController, BindableType {
     @objc func refresh(_ sender: AnyObject) {
         loadData()
     }
+    
+
    
 }
 
