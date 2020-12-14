@@ -49,6 +49,9 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
                                                     <constraints>
                                                         <constraint firstItem="gnw-cq-2mn" firstAttribute="leading" secondItem="CK7-oh-0JZ" secondAttribute="leading" constant="15" id="1xf-HI-BBy"/>
                                                         <constraint firstItem="gnw-cq-2mn" firstAttribute="top" secondItem="wZj-2Z-chB" secondAttribute="bottom" constant="15" id="F0G-DA-NLG"/>
@@ -71,6 +74,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="favoriteTable"/>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MED-38-HI0"/>

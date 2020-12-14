@@ -73,6 +73,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oit-wG-evr">
                                                 <rect key="frame" x="8" y="220" width="24" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="save"/>
                                                 <state key="normal" image="icons8-heart"/>
                                             </button>
                                         </subviews>
@@ -129,6 +130,9 @@
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" name="LightGrey"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstItem="T0c-GC-Qua" firstAttribute="top" secondItem="o2F-qg-Sd3" secondAttribute="top" constant="6.5" id="Cgg-Ro-dsQ"/>
                                             <constraint firstAttribute="bottom" secondItem="T0c-GC-Qua" secondAttribute="bottom" constant="6.5" id="T3s-gQ-QYe"/>
