@@ -43,6 +43,8 @@ public class PopularMovieModel: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
+    
+
 }
 
 

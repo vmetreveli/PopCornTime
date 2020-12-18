@@ -22,5 +22,8 @@ target 'PopCornTime' do
   pod 'SDWebImage'
   pod 'PanModal'
 
+  
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
 
 end
