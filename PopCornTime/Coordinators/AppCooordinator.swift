@@ -12,7 +12,7 @@ import UIKit
 enum AppRoute: Route {
     case home(AppDependencies)
     case favorite
-    //case detail(PopularMovieModel)
+    case detail(PopularMovieModel)
     //case dismiss
 }
 
@@ -21,7 +21,7 @@ class AppCoordinator: TabBarCoordinator<AppRoute>{
     var dependencies: AppDependencies!
     var backendManager = BackendManager()
     
-
+    
     // MARK: Stored properties
     
     private let favoritesRouter: StrongRouter<FavoritesRoute>
@@ -35,16 +35,17 @@ class AppCoordinator: TabBarCoordinator<AppRoute>{
         
         let homeCoordinator = HomeCoordinator()
         homeCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "icons8-fire"), tag: 0)
-      
+        
         let favoritesCoordinator = FavoritesCoordinator()
         favoritesCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "icons8-star"), tag: 1)
-         
+        
         self.init(favoritesRouter: favoritesCoordinator.strongRouter, homeRouter: homeCoordinator.strongRouter)
     }
     
     init(favoritesRouter: StrongRouter<FavoritesRoute>, homeRouter: StrongRouter<HomeRoute>) {
         self.favoritesRouter = favoritesRouter
         self.homeRouter = homeRouter
+        self.dependencies = AppDependencies(backendManager: backendManager)
         
         super.init(tabs: [homeRouter, favoritesRouter], select: homeRouter)
     }
@@ -53,10 +54,16 @@ class AppCoordinator: TabBarCoordinator<AppRoute>{
     override func prepareTransition(for route: AppRoute) -> TabBarTransition {
         switch route {
         case .home(_):
-                return .select(homeRouter)
-                
-            case .favorite:
-                return .select(favoritesRouter)
+            return .select(homeRouter)
+            
+        case .favorite:
+            return .select(favoritesRouter)
+            
+        case .detail(let movie):
+            let viewController = DetailVC.instantiateFromStoryboard(storyboardName: "DetailView", storyboardId: "DetailView")
+            let viewModel = DetailVM(router: DetailCoordinator(movie: movie).unownedRouter, movie: movie, dataManager: dependencies.dataManager)
+            viewController.bind(to: viewModel)
+            return .present(viewController)
         }
         
     }

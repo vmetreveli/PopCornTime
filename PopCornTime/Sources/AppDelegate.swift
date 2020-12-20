@@ -4,6 +4,7 @@
 //
 //  Created by vakhushti metreveli on 02.12.20.
 //
+//xcrun simctl push <device> <bundle-identifier> <path-to-apns-file>
 
 import UIKit
 import UserNotifications
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let gcmMessageIDKey = "gcmMessageIDKey"
     private lazy var mainWindow = UIWindow()
     private let router = AppCoordinator().strongRouter
+   
     
     // MARK: UIApplicationDelegate
     
@@ -108,7 +110,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     }
 
     // With swizzling disabled you must let Messaging know about the message, for Analytics
-    // Messaging.messaging().appDidReceiveMessage(userInfo)
+    Messaging.messaging().appDidReceiveMessage(userInfo)
 
     // Print full message.
     print(userInfo)
@@ -116,9 +118,15 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     
     //show Page with new Notificaton Info
    // coordinator.presentPushOverlayScreen(title: title, imageUrl: imageUrl, desc: desc)
+    let favorite = PopularMovieModel()
     
-    
-    
+    favorite.id = 123
+    favorite.title = "Notification"
+    favorite.posterPath = "model.posterPath"
+    favorite.voteAverage =  0
+    favorite.overview = "gfgg"
+//return    self.router.rx.trigger(.detail(favorite))
+    router.trigger(.detail(favorite))
     completionHandler()
   }
 }
